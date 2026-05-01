@@ -1,0 +1,35 @@
+{
+  "entities": {
+    "Product": {
+      "title": "Product Deal",
+      "description": "A deal or offer for a specific product.",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string" },
+        "originalPrice": { "type": "number" },
+        "finalPrice": { "type": "number" },
+        "discountPercentage": { "type": "number" },
+        "category": { "type": "string" },
+        "subCategory": { "type": "string" },
+        "brand": { "type": "string" },
+        "imageUrl": { "type": "string" },
+        "purchaseLink": { "type": "string" },
+        "availability": { "type": "boolean" },
+        "tags": { 
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "createdAt": { "type": "string", "format": "date-time" },
+        "updatedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["name", "originalPrice", "finalPrice", "category", "imageUrl", "purchaseLink"]
+    }
+  },
+  "firestore": {
+    "products": {
+      "schema": "Product",
+      "description": "Master collection of all product deals."
+    }
+  }
+}
